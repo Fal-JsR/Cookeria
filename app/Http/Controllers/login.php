@@ -31,6 +31,7 @@ class login extends Controller
     public function logout(Request $request)
     {
         auth()->logout();
+        
 
         return redirect('/')->with('success', 'Logout successful!');
     }
