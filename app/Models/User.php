@@ -46,4 +46,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function reseps()
+    {
+        return $this->hasMany(\App\Models\Resep::class);
+    }
+
+    public function koleksis()
+    {
+        return $this->hasMany(\App\Models\Koleksi::class);
+    }
 }

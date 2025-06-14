@@ -20,7 +20,7 @@ class login extends Controller
         ]);
 
         // Cek kredensial pengguna
-        if (auth()->attempt($request->only('email', 'password'))) {
+        if (\Illuminate\Support\Facades\Auth::attempt($request->only('email', 'password'))) {
             // Jika berhasil, redirect ke halaman dashboard atau halaman lain
             return redirect()->route('home')->with('success', 'Login successful!');
         }
@@ -31,7 +31,7 @@ class login extends Controller
     public function logout(Request $request)
     {
         auth()->logout();
-        
+
 
         return redirect('/')->with('success', 'Logout successful!');
     }
